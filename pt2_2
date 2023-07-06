@@ -1,0 +1,6 @@
+TV_shows = ['новости', 'карта родины', 'музыкальный блок', 'смешарики']
+print(str(TV_shows).replace(', ', '\n'))
+show = input('введите ещё одну телепередачу: ')
+index = int(input('введите индекс: '))
+TV_shows.insert(index, show)
+print(TV_shows)

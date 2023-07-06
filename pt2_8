@@ -1,0 +1,8 @@
+def find_first_square(n):
+    number = 1 
+    while number ** 2 <= n:
+        number += 1
+    return number
+n = int(input("Введите число n: "))
+result = find_first_square(n)
+print("Первое натуральное число, квадрат которого больше", n, ":", result)

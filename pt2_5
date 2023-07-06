@@ -1,0 +1,26 @@
+import random
+def orlyanka():
+    wins = 0
+    losses = 0
+    consecutive_losses = 0
+    while consecutive_losses < 3:
+        user_choice = input("Орёл или решка? ")
+        if user_choice == '0':
+            user_choice_name = 'Орел'
+        elif user_choice == '1':
+            user_choice_name = 'Решка'
+        else:
+            break
+        options = ['Орел', 'Решка']
+        program_choice_name = random.choice(options)
+        if user_choice_name == program_choice_name:
+            print("Победа")
+            consecutive_losses = 0
+            wins += 1
+        else:
+            print("Проигрыш")
+            consecutive_losses += 1
+            losses += 1
+        print("Счет: Выигрыши -", wins, "Проигрыши -", losses)
+    print("Игра завершена.")
+orlyanka()
