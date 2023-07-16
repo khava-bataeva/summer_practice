@@ -1,0 +1,14 @@
+def find_simple_num(start, end):
+    simple_num = []  
+    for num in range(start, end+1):
+        if num > 1:
+            for i in range(2, num):
+                if (num % i) == 0:
+                    break
+            else:
+                simple_num.append(num)  
+    return simple_num
+start = int(input("Начальное значение диапазона: "))
+end = int(input("Конечное значение диапазона: "))
+res = find_simple_num(start, end)
+print("Простые числа:", res)

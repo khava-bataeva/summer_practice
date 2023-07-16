@@ -1,0 +1,16 @@
+def rot13(str):
+    encoding = ""
+    for n in str:
+        if n.isalpha():
+            if n.islower():
+                encod_n = chr((ord(n) - ord('a') + 13) % 26 + ord('a'))
+            else:
+                encod_n = chr((ord(n) - ord('A') + 13) % 26 + ord('A'))
+            encoding += encod_n
+        else:
+            encoding += n
+    return encoding
+
+string = input("Строка для шифрования: ")
+encoding = rot13(string)
+print("Зашифрованная строка: ", encoding)
