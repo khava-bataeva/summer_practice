@@ -1,0 +1,25 @@
+# .github/workflows/check.yml
+имя: проверка в стиле pycodestyle
+
+вкл.: [ нажать ]
+
+задания: 
+ check_files:
+ выполняется на: ubuntu-последняя версия 
+ шаги:
+ - использует: действия/проверка@v3
+ - имя: Установка Python 
+ использует: действия / установка-python@v4
+ с:
+ python-версия: 3.9
+ # требования к установке
+ - имя: Установка зависимостей
+ выполнить: |
+ python -m pip install --обновить pip 
+ если [ -f requirements.txt ]; затем установить pip -r requirements.txt ; fi
+ # установить pycodestyle
+ - имя: установить pycodestyle
+ запустить: pip установить pycodestyle
+ # проверить файлы .py
+ - имя: проверка pycodestyle
+ запустить: pycodestyle --max-doc-length=120 --выберите E, W ./
