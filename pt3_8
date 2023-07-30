@@ -1,2 +1,0 @@
-alphabet = {letter: index+1 for index, letter in enumerate('abcdefghijklmnopqrstuvwxyz')}
-print(alphabet)
