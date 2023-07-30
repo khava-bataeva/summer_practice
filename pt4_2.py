@@ -1,16 +1,10 @@
-def direction(s, first, second, palindromes):
-    while first >= 0 and second < len(s) and s[first] == s[second]:
-        palindromes.add(s[first: second + 1])
-        first = first - 1
-        second = second + 1
-def findSubstrings(s):
-    palindromes = set()
-    for i in range(len(s)):
-        direction(s, i, i, palindromes)
-        direction(s, i, i + 1, palindromes)
-    print(palindromes, end = '')
+def palindrome(string):
+    reversed_string = string[::-1]
+    return string == reversed_string
 
 
-if __name__ == '__main__':
-    s = 'aabbdaad'
-    findSubstrings(s)
+s = str(input('Введите строку: '))
+for i in range(0, len(s)):
+    for j in range(i + 1, len(s) + 1):
+        if palindrome(s[i:j]) and len(s[i:j]) != 1:
+            print(s[i:j])
