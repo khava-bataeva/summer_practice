@@ -1,4 +1,5 @@
 import itertools
+
 def find(num, s):
     combinations = []
     for i in range(1, len(num) + 1):
@@ -6,6 +7,8 @@ def find(num, s):
             if sum(combination) == s:
                 combinations.append(combination)
     return combinations
+
+
 num = [1, 2, 3, 4, 5, 6, 7, 8]
 s = 9
 res = find(num, s)

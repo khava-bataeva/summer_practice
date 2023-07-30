@@ -11,6 +11,7 @@ def rot13(str):
             encoding += n
     return encoding
 
+
 string = input("Строка для шифрования: ")
 encoding = rot13(string)
 print("Зашифрованная строка: ", encoding)
