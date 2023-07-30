@@ -1,17 +1,18 @@
 import itertools
 
-def find(num, s):
-    combinations = []
-    for i in range(1, len(num) + 1):
-        for combination in itertools.combinations(num, i):
-            if sum(combination) == s:
-                combinations.append(combination)
-    return combinations
+
+def chislo(numlist):
+    s = ''.join(numlist)
+    s = int(s)
+    return s
 
 
-num = [1, 2, 3, 4, 5, 6, 7, 8]
-s = 9
-res = find(num, s)
-print(f'Уникальные комбинации чисел {num}, сумма которых равна {s}:')
-for combination in res:
-    print(combination)
+a = input('Введите список чисел через пробел: ').split(' ')
+suma = int(input('Введите число (сумму): '))
+for i in range(1, len(a)):
+    comb_set = itertools.combinations(a, i)
+    for j in comb_set:
+        n = list(j)
+        s_arr = sum(list(map(int, j)))
+        if s_arr == suma:
+            print(chislo(n))
