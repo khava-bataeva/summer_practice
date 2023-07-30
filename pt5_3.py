@@ -1,8 +1,9 @@
 import csv
 
+
 with open("books.csv", "r") as file:
     reader = csv.reader(file)
-    next(reader) 
+    next(reader)
     start = int(input("Введите начальный год: "))
     end = int(input("Введите конечный год: "))
     count = 0
