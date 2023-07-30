@@ -1,19 +1,14 @@
 import csv
 
-def create():
-    books = [
-        {'Название': 'Ревизор', 'Автор': 'Николай Гоголь', 'Год выпуска': 1836},
-        {'Название': 'Преступление и наказание', 'Автор': 'Фёдор Достоевский', 'Год выпуска': 1866},
-        {'Название': 'Пиковая дама', 'Автор': 'Александр Пушкин', 'Год выпуска': 1834},
-        {'Название': 'Ася', 'Автор': 'Иван Тургенев', 'Год выпуска': 1858}
-    ]
+header = ["Книга", "Автор", "Год выпуска"]
+rows = [["Война и мир", "Лев Толстой", "1865"],
+        ["Отверженные", "Виктор Гюго", "1862"],
+        ["Мёртвые души", "Николай Гоголь", "1842"],
+        ["Мастер и Маргарита", "Михаил Булгаков", "1937"]]
 
-    with open('books.csv', 'w', newline='') as csvfile:
-        fieldnames = ['Название', 'Автор', 'Год выпуска']
-        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+filename = "prog_books.csv"
 
-        writer.writeheader()
-        for book in books:
-            writer.writerow(book)
-
-create()
+with open(filename, "w", encoding="utf-8") as f:
+    writer = csv.writer(f)
+    writer.writerow(header)
+    writer.writerows(rows)
