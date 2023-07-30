@@ -1,1 +1,4 @@
-(lambda n: print(''.join(n)))(sorted([i for i in input()], reverse = True))
+num = input("Введите число: ")
+sorted_str = map(str, sorted(map(int, list(num)), reverse=True))
+max_num = int(''.join(sorted_str))
+print(max_num)
