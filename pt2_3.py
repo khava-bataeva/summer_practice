@@ -1,12 +1,10 @@
-def is_armstrong(num):
-    num_str = str(num)
-    n = len(num_str)
-    sum = 0
-    for digit in num_str:
-        sum += int(digit) ** n
-    if sum == num:
-        return True
-    else:
-        return False
-num = int(input())
-print(is_armstrong(num))
+num = (int(input("Введите число: ")))
+nums = str(num)
+sum = 0
+n = len(nums)
+for digit in nums:
+    sum += int(digit) ** n
+if num == sum:
+    print(num, "является числом Армстронга")
+else:
+    print(num, "не является числом Армстронга")
