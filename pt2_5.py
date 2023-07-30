@@ -1,27 +1,21 @@
 import random
 
-def orlyanka():
-    wins = 0
-    losses = 0
-    consecutive_losses = 0
-    while consecutive_losses < 3:
-        user_choice = input("Орёл или решка? ")
-        if user_choice == '0':
-            user_choice_name = 'Орел'
-        elif user_choice == '1':
-            user_choice_name = 'Решка'
+n = 0
+k = ''
+while '000' not in k:
+    a = int(input('Орёл-0 или решка-1: '))
+    i = random.randint(0, 1)
+    if a == 1 or a == 0:
+        if i == a:
+            k += '1'
+            print('Выиграл')
+            print('Число выигрышей: ', k.count('1'),
+                  'Число проигрышей: ', k.count('0'))
         else:
-            break
-        options = ['Орел', 'Решка']
-        program_choice_name = random.choice(options)
-        if user_choice_name == program_choice_name:
-            print("Победа")
-            consecutive_losses = 0
-            wins += 1
-        else:
-            print("Проигрыш")
-            consecutive_losses += 1
-            losses += 1
-        print("Счет: Выигрыши -", wins, "Проигрыши -", losses)
-    print("Игра завершена.")
-orlyanka()
+            k += '0'
+            print('Проиграл')
+            print('Число выигрышей: ', k.count('1'),
+                  'Число проигрышей: ', k.count('0'))
+    else:
+        break
+print('Игра завершена')
