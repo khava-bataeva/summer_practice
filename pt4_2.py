@@ -3,8 +3,6 @@ def direction(s, first, second, palindromes):
         palindromes.add(s[first: second + 1])
         first = first - 1
         second = second + 1
-        
-
 def findSubstrings(s):
     palindromes = set()
     for i in range(len(s)):
