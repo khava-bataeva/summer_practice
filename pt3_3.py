@@ -1,2 +1,4 @@
-result = lambda x : f"{x} чётное" if x % 2 == 0 else f"{x} нечётное"
-print(result(152))
+number = int(input("Введите число: "))
+chek = lambda num: num % 2 == 0
+result = chek(number)
+print(result)
