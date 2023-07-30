@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 
 while True:
     try:
-        url = input("Ссылка на исполнителя на Яндекс Музыке: ")
+        url = input("Ссылка на Яндекс Музыке: ")
         response = requests.get(url + "/tracks")
         break
     except (requests.exceptions.MissingSchema,
