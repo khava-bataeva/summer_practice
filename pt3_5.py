@@ -1,10 +1,10 @@
-def simple(n):
+def not_prime(n):
     if n < 2:
-        return False
+        return True
     for i in range(2, int(n ** 0.5) + 1):
         if n % i == 0:
+            return True
             return False
-    return True
-numbers = [num for num in range (1, 16)]
-not_simple = [x for x in numbers if not simple(x)]
-print(not_simple)
+
+
+print([x for x in range(100) if not_prime(x)])
