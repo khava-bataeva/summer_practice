@@ -1,6 +1,6 @@
-a = int(input('Введите число a '))
-b = int(input('Введите число b '))
-c = int(input('Введите число c '))
+a = int(input('Введите число a - '))
+b = int(input('Введите число b - '))
+c = int(input('Введите число c - '))
 print('Максимальным числом является: ', end='')
 if b <= a >= c:
     print(a)
