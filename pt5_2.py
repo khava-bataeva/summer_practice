@@ -1,39 +1,32 @@
 import csv
 
-def bookslist(num):
-    books = []
-    for _ in range(num):
-        name = input('Введите название книги: ')
-        author = input('Введите автора книги: ')
-        year = input('Введите год выпуска книги: ')
-        books.append({'Название': name, 'Автор': author, 'Год выпуска': year})
-    return books
 
-def find_books(books, author):
-    matching = []
-    for book in books:
-        if book['Автор'] == author:
-            matching.append(book)
-    return matching
+def csv_add_row(filename1, row1):
+    with open(filename1, "a", encoding="utf-8") as f1:
+        writer = csv.writer(f1)
+        writer.writerow(row1)
 
-num = int(input('Сколько записей вы хотите добавить в список? '))
 
-books = bookslist(num)
+filename = "prog_books.csv"
 
-author = input('Введите автора книги, которую вы хотите найти: ')
+n_rows = int(input("Сколько записей вы ходите добавить?: "))
+for i in range(n_rows):
+    print(f"Добавление записи {i+1}")
+    book = input("Введите название книги: ")
+    author = input("Введите автора: ")
+    year = input("Введите год выпуска: ")
+    row = [book, author, year]
+    csv_add_row(filename, row)
+    print("Запись добавлена.\n")
 
-matching = find_books(books, author)
+name = input("Введите автора для поиска его книг: ")
+with open(filename, "r", encoding="utf-8") as f:
+    reader = csv.DictReader(f)
 
-if matching:
-    print(f'Книги автора {author}:')
-    for book in matching:
-        print(f'Название: {book["Название"]}, Год выпуска: {book["Год выпуска"]}')
-else:
-    print(f'Нет книг автора {author} в списке.')
-
-with open('books.csv', 'w', newline='') as csvfile:
-    fieldnames = ['Название', 'Автор', 'Год выпуска']
-    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-    writer.writeheader()
-    writer.writerows(books)
-
+    found = False
+    for row in reader:
+        if name in row["Автор"]:
+            found = True
+            print(row["Книга"], row["Автор"], sep=", ")
+    if not found:
+        print("Книги не найдены.")
