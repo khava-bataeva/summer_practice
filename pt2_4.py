@@ -1,4 +1,5 @@
 import math
+
 a = int(input("Введите значение a= "))
 b = int(input("Введите значение b= "))
 c = int(input("Введите значение c= "))
