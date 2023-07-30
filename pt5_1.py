@@ -6,7 +6,7 @@ rows = [["Война и мир", "Лев Толстой", "1865"],
         ["Мёртвые души", "Николай Гоголь", "1842"],
         ["Мастер и Маргарита", "Михаил Булгаков", "1937"]]
 
-filename = "prog_books.csv"
+filename = "books.csv"
 
 with open(filename, "w", encoding="utf-8") as f:
     writer = csv.writer(f)
