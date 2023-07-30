@@ -20,3 +20,4 @@ elif (a <= c >= b and a > b):
     print(c, a, b)
 elif (a <= c >= b and b > a):
     print(c, b, a)
+    
