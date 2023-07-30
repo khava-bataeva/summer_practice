@@ -1,6 +1,6 @@
-def vowel(letter):
-    vowels = 'aeiou'
-    return letter.lower() in vowels
-str = input("Введите строку: ")
-vowel_letter = {letter: vowel(letter) for letter in str}
-print(vowel_letter)
+vowels = 'уеёыаоэяию'
+consonants = 'йцкнгшщзхъфвпрлджчсмтьб'
+s = input("Введите строку: ")
+letter_dict = {letter: True if letter.lower() in vowels
+               else False for letter in s if letter.isalpha()}
+print(letter_dict)
