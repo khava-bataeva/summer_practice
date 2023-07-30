@@ -1,4 +1,5 @@
 import random
+
 def orlyanka():
     wins = 0
     losses = 0
