@@ -1,9 +1,6 @@
-def sum_negative_numbers():
-    s = 0
-    while True:
-        n = int(input("Введите число: "))
-        if n >= 0:
-            break
-        s += n
-    print("Сумма всех отрицательных чисел:", s)
-sum_negative_numbers()
+n = int(input('Введите число: '))
+s = 0
+while n < 0:
+    s += n
+    n = int(input('Введите число: '))
+print(s)
